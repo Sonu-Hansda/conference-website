@@ -1,115 +1,109 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222 84% 5%;
+@theme {
+  --color-background: hsl(0 0% 100%);
+  --color-foreground: hsl(222 84% 5%);
 
-    --card: 0 0% 100%;
-    --card-foreground: 222 84% 5%;
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(222 84% 5%);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 84% 5%;
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(222 84% 5%);
 
-    --primary: 221 83% 53%;
-    --primary-foreground: 210 40% 98%;
+  --color-primary: hsl(221 83% 53%);
+  --color-primary-foreground: hsl(210 40% 98%);
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 84% 5%;
+  --color-secondary: hsl(210 40% 96%);
+  --color-secondary-foreground: hsl(222 84% 5%);
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+  --color-muted: hsl(210 40% 96%);
+  --color-muted-foreground: hsl(215 16% 47%);
 
-    --accent: 221 83% 53%;
-    --accent-foreground: 210 40% 98%;
+  --color-accent: hsl(221 83% 53%);
+  --color-accent-foreground: hsl(210 40% 98%);
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+  --color-destructive: hsl(0 84% 60%);
+  --color-destructive-foreground: hsl(210 40% 98%);
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 221 83% 53%;
+  --color-border: hsl(214 32% 91%);
+  --color-input: hsl(214 32% 91%);
+  --color-ring: hsl(221 83% 53%);
 
-    --radius: 0.5rem;
+  --radius: 0.5rem;
 
-    --teal: 174 70% 44%;
-    --teal-light: 174 60% 85%;
-    --teal-dark: 174 70% 35%;
-    
-    --blue-dark: 221 83% 53%;
-    --blue-darker: 224 76% 48%;
-    
-    --amber: 38 92% 50%;
-    --amber-dark: 38 92% 40%;
-    
-    --gray-light: 210 20% 98%;
-    --gray-medium: 215 16% 60%;
-    --gray-dark: 215 25% 27%;
-  }
-
-  .dark {
-    --background: 0 0% 10%;
-    --foreground: 0 0% 95%;
-
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 95%;
-
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 95%;
-
-    --primary: 174 70% 44%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 217 33% 18%;
-    --secondary-foreground: 0 0% 95%;
-
-    --muted: 217 33% 18%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 174 70% 44%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 0 0% 95%;
-
-    --border: 217 33% 18%;
-    --input: 217 33% 18%;
-    --ring: 174 70% 44%;
-  }
+  --color-teal: hsl(174 70% 44%);
+  --color-teal-light: hsl(174 60% 85%);
+  --color-teal-dark: hsl(174 70% 35%);
+  
+  --color-blue-dark: hsl(221 83% 53%);
+  --color-blue-darker: hsl(224 76% 48%);
+  
+  --color-amber: hsl(38 92% 50%);
+  --color-amber-dark: hsl(38 92% 40%);
+  
+  --color-gray-light: hsl(210 20% 98%);
+  --color-gray-medium: hsl(215 16% 60%);
+  --color-gray-dark: hsl(215 25% 27%);
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
+.dark {
+  --color-background: hsl(0 0% 10%);
+  --color-foreground: hsl(0 0% 95%);
 
-  body {
-    @apply bg-background text-foreground;
-  }
+  --color-card: hsl(0 0% 10%);
+  --color-card-foreground: hsl(0 0% 95%);
+
+  --color-popover: hsl(0 0% 10%);
+  --color-popover-foreground: hsl(0 0% 95%);
+
+  --color-primary: hsl(174 70% 44%);
+  --color-primary-foreground: hsl(0 0% 100%);
+
+  --color-secondary: hsl(217 33% 18%);
+  --color-secondary-foreground: hsl(0 0% 95%);
+
+  --color-muted: hsl(217 33% 18%);
+  --color-muted-foreground: hsl(215 20% 65%);
+
+  --color-accent: hsl(174 70% 44%);
+  --color-accent-foreground: hsl(0 0% 100%);
+
+  --color-destructive: hsl(0 63% 31%);
+  --color-destructive-foreground: hsl(0 0% 95%);
+
+  --color-border: hsl(217 33% 18%);
+  --color-input: hsl(217 33% 18%);
+  --color-ring: hsl(174 70% 44%);
 }
 
-@layer utilities {
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-in-out;
-  }
-  
-  .animate-slide-up {
-    animation: slideUp 0.8s ease-out;
-  }
-  
-  .animate-scale-in {
-    animation: scaleIn 0.5s ease-out;
-  }
-  
-  .animate-pulse-subtle {
-    animation: pulseSubtle 2s infinite;
-  }
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  overflow-x: hidden;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out;
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 2s infinite;
 }
 
 @keyframes fadeIn {
